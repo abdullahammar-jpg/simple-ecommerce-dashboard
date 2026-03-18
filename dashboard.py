@@ -12,9 +12,9 @@ st.set_page_config(page_title="E-Commerce Dashboard", layout="wide")
 def load_data():
     current_dir = os.path.dirname(os.path.abspath(__file__))
     
-    file_path = os.path.join(current_dir, "Main_Data.csv")
+    file_path = os.path.join(current_dir, "Main_Data.zip")
     
-    df = pd.read_csv(file_path)
+    df = pd.read_csv(file_path, compression='zip')
     
     datetime_columns = ["order_purchase_timestamp", "order_delivered_customer_date"]
     for col in datetime_columns:
